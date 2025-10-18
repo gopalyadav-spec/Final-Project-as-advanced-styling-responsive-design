@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Gallery of Modern Technology</title>
+  <style>
+    /* Default styles: Mobile-first approach */
+    :root {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1rem;
+      background-color: #fdfdfd;
+    }
+
+    header, footer {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover; /* Ensures images fill the figure without distortion */
+    }
+
+    figure {
+      margin: 0;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+      aspect-ratio: 1 / 1; /* Makes figures square */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    figure img {
+        flex-grow: 1;
+        min-height: 0;
+    }
+
+    figcaption {
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Mobile grid layout: one column */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    /* Tablet view: triggers at 772px */
+    @media (min-width: 772px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      figure {
+        border-radius: 50%;
+        overflow: hidden; /* Clips the image to the circular shape */
+      }
+      
+      /* Set the last figure to take up both columns */
+      .grid figure:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* Large screen view: triggers at 992px */
+    @media (min-width: 992px) {
+      /* Set every third figure to take up both columns */
+      .grid figure:nth-child(3n) {
+        grid-column: 1 / -1;
+      }
+
+      /* Remove the border radius from all figures */
+      figure {
+        border-radius: 0;
+      }
+    }
+
+    /* Media query for dark color scheme */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      figure {
+        background-color: #2c2c2c; /* Dark color for the figure background */
+        color: #f5e6a3; /* Lighter, yellow-ish font color */
+        border-color: black; /* Black border */
+      }
+    }
+
+    /* Media query for users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        scroll-behavior: auto; /* Remove smooth scrolling */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="top">A Gallery of Modern Technology</h1>
+  </header>
+
+  <main>
+    <p>Welcome to our gallery of modern technology! This collection is dedicated to showcasing some of the most exciting and impactful technological advancements of our time. Here, you'll find a variety of innovations that are shaping our world, from artificial intelligence to virtual reality. Our goal is to provide a visual glimpse into the cutting-edge of tech.</p>
+
+    <p>Feel free to browse through the images and learn more about these fascinating fields. We've included brief descriptions to highlight the significance of each technology. We hope this gallery inspires curiosity and a greater appreciation for the rapid pace of innovation that defines our era.</p>
+    
+    <div class="grid">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1535146032393-db0c96d9841a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="A sleek, humanoid robot representing artificial intelligence.">
+            <figcaption>Artificial Intelligence</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1778&q=80" alt="A person wearing a virtual reality headset, immersed in a digital world.">
+            <figcaption>Virtual Reality</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="A conceptual image of interconnected digital blocks, representing blockchain technology.">
+            <figcaption>Blockchain</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="A stylized cloud icon with data streams, symbolizing cloud computing.">
+            <figcaption>Cloud Computing</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" alt="A quadcopter drone flying against a clear sky.">
+            <figcaption>Drones</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1607933629472-3c24a9f8f413?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="A 3D printer in the process of creating a complex geometric object.">
+            <figcaption>3D Printing</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="A digital padlock on a circuit board background, representing cybersecurity.">
+            <figcaption>Cybersecurity</figcaption>
+        </figure>
+        <figure>
+            <img src="https://plus.unsplash.com/premium_photo-1679829314095-fe210a40055b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="An abstract representation of quantum computing with glowing qubits.">
+            <figcaption>Quantum Computing</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="A modern smartphone displaying a vibrant, abstract screen.">
+            <figcaption>Mobile Technology</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1544266401-0c046ab345e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="A smart home device controlling lights and temperature, representing the Internet of Things.">
+            <figcaption>Internet of Things (IoT)</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1574015970339-411502474773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="A person using a tablet to view an augmented reality overlay on a real-world object.">
+            <figcaption>Augmented Reality (AR)</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1598089840283-176a951c5f32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="A 5G network tower with radio waves illustrating high-speed connectivity.">
+            <figcaption>5G Technology</figcaption>
+        </figure>
+    </div>
+  </main>
+
+  <footer>
+    <a href="#top">Jump to the Top</a>
+  </footer>
+</body>
+
+</html>
+
+
